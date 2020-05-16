@@ -11,6 +11,9 @@
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
     <RootNamespace>Project_P34.API_Angular</RootNamespace>
+	<_FunctionsSkipCleanOutput>true</_FunctionsSkipCleanOutput>
+
+
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,0 +1,38 @@
+<div class="bkk">
+  <div class="add">
+
+
+<h2>User Manager</h2>
+
+<input style="margin-top: 20px; margin-bottom: 20px;" type="text"  name="search" [(ngModel)]="searchteaxt" (ngModelChange)="search()" class="inputsearch" nz-input placeholder="search ..."/>
+
+<nz-table #rowSelectionTable nzShowSizeChanger [nzData]="searchResult" >
+  <thead>
+    <tr>
+      <th nzWidth="30%">Name</th>
+      <th>Age</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of rowSelectionTable.data">
+      <td>{{data.fullName}}</td>
+      <td>{{data.age}}</td>
+      <td>{{data.address}}</td>
+      <td>{{data.email}}</td>
+      <td>{{data.phone}}</td>
+      <td>
+        <a 
+        (nzOnConfirm)="deleteUser(data.id)"
+        nz-popconfirm nzPopconfirmTitle="Точно удалить?" nz-button nzType="primary" style="color: white;">Delete</a>
+        <a [routerLink]="['/admin-panel/edit-user/', data.id]" routerLinkActive="router-link-active"  nz-button style="margin-left: 20px;">Edit</a>
+      </td>
+
+    </tr>
+  </tbody>
+</nz-table>
+</div>
+</div>

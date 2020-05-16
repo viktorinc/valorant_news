@@ -1,0 +1,32 @@
+.img-news
+{
+    width: 100%;
+    position: relative;
+    height: 200px;
+}
+
+.item
+{
+    overflow: hidden;
+    float: left;
+    color: white;
+}
+
+.item-text
+{
+    color: white;
+    margin-top: 10px;
+}
+
+.item-header
+{
+    color: white;
+    margin-top: 20px;
+}
+
+.news-list
+{
+    background-color: black;
+    border-radius: 15px;
+    
+}

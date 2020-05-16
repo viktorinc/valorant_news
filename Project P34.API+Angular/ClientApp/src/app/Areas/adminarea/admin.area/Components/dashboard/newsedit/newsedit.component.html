@@ -1,0 +1,60 @@
+<div class="bkk">
+  <div class="add">
+<h3>Редагування Новини:</h3>
+ <div *ngIf="model">
+  <nz-form-item>
+    <nz-form-control>
+      <nz-input-group>
+        <label for="title">Title:</label>
+        <input type="text" [(ngModel)]="model.title" name="title"  nz-input placeholder="Title" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-control>
+      <nz-input-group >
+        <label for="subtitle">Subtitle:</label>
+        <input type="text" name="Subtitle"  [(ngModel)]="model.subtitle" nz-input placeholder="Subtitle" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-control>
+      <nz-input-group >
+        <label for="mtext">Main text:</label>
+        <textarea type="text" name="Text" [(ngModel)]="model.text" nz-input placeholder="Text" ></textarea>
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+
+
+  <nz-form-item>
+    <nz-form-control>
+      <nz-input-group >
+        <label for="photourl">Photo URL:</label>
+
+        <input type="text" name="ImageUrl"  [(ngModel)]="model.imageUrl" nz-input placeholder="ImageUrl" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-control>
+      <nz-input-group >
+        <label for="likes">Likes:</label>
+
+        <input type="number" name="Likes"  [(ngModel)]="model.likes" nz-input placeholder="Likes" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+
+  <button nz-button class=" login-form-margin" nzType="primary" (click)="submitForm()">Зберегти зміни</button>
+  <button nz-button class=" login-form-margin baseBg text-color-white baseButton"  style="margin-left:20px"
+    [routerLink]="['/admin-panel']">Скасувати редагування</button>
+
+
+ </div>
+ </div>
+</div>

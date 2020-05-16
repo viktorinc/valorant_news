@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~angular-notifier/styles";
+@import "~ng-zorro-antd/ng-zorro-antd.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Merriweather:wght@700&family=Poppins:ital@1&display=swap');
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+body
+{
+  font-family: 'Anton', sans-serif;
+    background-image: url("https://3dnews.ru/assets/external/illustrations/2020/03/06/1005297/Valorant.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}

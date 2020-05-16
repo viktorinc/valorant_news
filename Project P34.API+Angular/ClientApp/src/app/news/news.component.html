@@ -1,0 +1,15 @@
+<div class="news-list row  container">
+
+    <div  style="float: left;     margin: 30px;    ">
+        <div class="col-md-4 item"  *ngFor="let item of listOfData " [routerLink]="['/news', item.id]">
+          <div class="">
+              <img class="img-news" [src]="item?.imageUrl" alt="">
+              <div id="item-header"> {{item?.title}}</div>
+              <div id="item-text">{{item?.subtitle}}</div>
+          </div>
+
+        </div>
+
+    </div>
+
+</div>

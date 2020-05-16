@@ -1,0 +1,64 @@
+<div class="bkk">
+<div class="add">
+<h1>Add news</h1>
+<form class="login-form" #myForm="ngForm" (ngSubmit)="onSubmit()">
+
+<div class="form-group">
+  <label for="title">Title:</label>
+  <input type="text" [(ngModel)]="model.Title" name="Title" class="form-control" id="title">
+</div>
+<div class="form-group">
+  <label for="subtitle">Subtitle:</label>
+  <input type="text" [(ngModel)]="model.Subtitle" name="Subtitle" class="form-control" id="subtitle">
+</div>
+<div>
+  <label for="mtext">Main text:</label>
+  <textarea class="form-control" [(ngModel)]="model.Text" name="Text" rows="5" id="mtext"></textarea>
+</div>
+<div>
+  <label for="photourl">Photo URL:</label>
+  <input type="text" [(ngModel)]="model.ImageUrl" name="ImageUrl" class="form-control" id="imageUrl">
+</div>
+<div>
+  <label for="likes">Likes:</label>
+  <input [(ngModel)]="model.Likes" type="number" name="Likes" class="form-control" id="likes">
+</div>
+<button type="submit" class="btn btn-danger" style="margin-top: 30px;">Add news</button>
+</form>
+
+
+<div class="newss">
+<h2>News Manager</h2>
+
+<input style="margin-top: 20px; margin-bottom: 20px;" type="text"  name="search" [(ngModel)]="searchteaxt" (ngModelChange)="search()" class="inputsearch" nz-input placeholder="search ..."/>
+
+<nz-table #rowSelectionTable nzShowSizeChanger [nzData]="searchResult" >
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Subtitle</th>
+      <th nzWidth="20%">Text</th>
+      <th nzWidth="20%">Photo Url</th>
+      <th>Likes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of rowSelectionTable.data">
+      <td>{{data.title}}</td>
+      <td>{{data.subtitle}}</td>
+      <td >{{data.text}}</td>
+      <td n>{{data.imageUrl}}</td>
+      <td>{{data.likes}}</td>
+      <td>
+        <a 
+        (nzOnConfirm)="deleteNews(data.id)"
+        nz-popconfirm nzPopconfirmTitle="Точно удалить?" nz-button nzType="primary" style="color: white;">Delete</a>
+        <a [routerLink]="['/admin-panel/edit-news/', data.id]" routerLinkActive="router-link-active"  nz-button style="margin-left: 20px;">Edit</a>
+      </td>
+
+    </tr>
+  </tbody>
+</nz-table>
+</div>
+</div>
+</div>
